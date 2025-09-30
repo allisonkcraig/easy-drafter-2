@@ -4,13 +4,14 @@ import NavBar from './NavBar';
 import Home from './Home';
 
 function App() {
+  // this will eventually be used to track which view the user is on
   const [currentView, setCurrentView] = useState('home');
 
   return (
-    <body className="App">
+    <div className="App">
       <NavBar />
       <div className="App-content">{currentView === 'home' && <Home />}</div>
-    </body>
+    </div>
   );
 }
 export default App;
