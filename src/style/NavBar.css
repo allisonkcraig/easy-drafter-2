@@ -1,0 +1,20 @@
+.navbar-logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+  text-decoration: none;
+  text-shadow: 2px 2px #ea8c86;
+  color: #7d1141;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f7d6d0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-links .navbar-item {
+  list-style-type: none;
+}
