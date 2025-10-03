@@ -3,3 +3,10 @@
   background-color: #f9f9f9;
   margin-top: 20px;
 }
+
+.TopBlockStep2-container {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  padding: 20px;
+}
