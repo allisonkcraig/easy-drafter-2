@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../style/TopBlockStep2.css';
 import BodiceDrafter from './BodiceDrafter';
+import BodiceMeasurementInputs from './BodiceMeasurementInputs';
 
 const TopBlockStep2: React.FC = () => {
   const { search } = useLocation();
@@ -18,8 +19,11 @@ const TopBlockStep2: React.FC = () => {
       <div>
         <strong>Waist:</strong> {waist || 'N/A'}
       </div>
-      <BodiceDrafter />
-      {/* TODO: add inputs to adjust draft */}
+      <div className="TopBlockStep2-container">
+        <BodiceDrafter />
+        <BodiceMeasurementInputs />
+        {/* TODO: add inputs to adjust draft */}
+      </div>
     </div>
   );
 };
