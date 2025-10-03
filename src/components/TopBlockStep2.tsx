@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import '../style/TopBlockStep2.css';
+import BodiceDrafter from './BodiceDrafter';
 
 const TopBlockStep2: React.FC = () => {
   const { search } = useLocation();
@@ -16,7 +18,7 @@ const TopBlockStep2: React.FC = () => {
       <div>
         <strong>Waist:</strong> {waist || 'N/A'}
       </div>
-      {/* TODO: add canvas to show draft */}
+      <BodiceDrafter />
       {/* TODO: add inputs to adjust draft */}
     </div>
   );
