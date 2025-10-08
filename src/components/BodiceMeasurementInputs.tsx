@@ -2,35 +2,35 @@ import React, { useEffect } from 'react';
 import '../style/BodiceMeasurementInputs.css';
 
 type Measures = {
-  fullLength: string;
-  centerFront: string;
-  frontShoulderSlope: string;
-  strap: string;
-  frontAcrossShoulder: string;
-  acrossChest: string;
-  bustDepth: string;
-  shoulderLength: string;
-  bustArc: string;
-  bustSpan: string;
-  waistArc: string;
-  dartPlacement: string;
-  sideLength: string;
+  fullLength: number;
+  centerFront: number;
+  frontShoulderSlope: number;
+  strap: number;
+  frontAcrossShoulder: number;
+  acrossChest: number;
+  bustDepth: number;
+  shoulderLength: number;
+  bustArc: number;
+  bustSpan: number;
+  waistArc: number;
+  dartPlacement: number;
+  sideLength: number;
 };
 
 const initialState: Measures = {
-  fullLength: '',
-  centerFront: '',
-  frontShoulderSlope: '',
-  strap: '',
-  frontAcrossShoulder: '',
-  acrossChest: '',
-  bustDepth: '',
-  shoulderLength: '',
-  bustArc: '',
-  bustSpan: '',
-  waistArc: '',
-  dartPlacement: '',
-  sideLength: '',
+  fullLength: 0,
+  centerFront: 0,
+  frontShoulderSlope: 0,
+  strap: 0,
+  frontAcrossShoulder: 0,
+  acrossChest: 0,
+  bustDepth: 0,
+  shoulderLength: 0,
+  bustArc: 0,
+  bustSpan: 0,
+  waistArc: 0,
+  dartPlacement: 0,
+  sideLength: 0,
 };
 
 type BodiceMeasurementInputsProps = {
@@ -229,7 +229,7 @@ const BodiceMeasurementInputs: React.FC<BodiceMeasurementInputsProps> = ({
         </div>
 
         <div>
-          <button type="submit">NEXT</button>
+          <button type="submit">Redraw</button>
         </div>
       </form>
     </div>
