@@ -4,11 +4,28 @@ import '../style/TopBlockStep2.css';
 import BodiceDrafter from './BodiceDrafter';
 import BodiceMeasurementInputs from './BodiceMeasurementInputs';
 
+const initialState = {
+  fullLength: '',
+  centerFront: '',
+  frontShoulderSlope: '',
+  strap: '',
+  frontAcrossShoulder: '',
+  acrossChest: '',
+  bustDepth: '',
+  shoulderLength: '',
+  bustArc: '',
+  bustSpan: '',
+  waistArc: '',
+  dartPlacement: '',
+  sideLength: '',
+};
+
 const TopBlockStep2: React.FC = () => {
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const bust = params.get('bust');
   const waist = params.get('waist');
+  const [measures, setMeasures] = React.useState(initialState);
 
   return (
     <div>
@@ -21,8 +38,7 @@ const TopBlockStep2: React.FC = () => {
       </div>
       <div className="TopBlockStep2-container">
         <BodiceDrafter />
-        <BodiceMeasurementInputs />
-        {/* TODO: add inputs to adjust draft */}
+        <BodiceMeasurementInputs setMeasures={setMeasures} />
       </div>
     </div>
   );
