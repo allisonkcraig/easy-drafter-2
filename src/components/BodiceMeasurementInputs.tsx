@@ -1,7 +1,23 @@
 import React, { useEffect } from 'react';
 import '../style/BodiceMeasurementInputs.css';
 
-const initialState = {
+type Measures = {
+  fullLength: string;
+  centerFront: string;
+  frontShoulderSlope: string;
+  strap: string;
+  frontAcrossShoulder: string;
+  acrossChest: string;
+  bustDepth: string;
+  shoulderLength: string;
+  bustArc: string;
+  bustSpan: string;
+  waistArc: string;
+  dartPlacement: string;
+  sideLength: string;
+};
+
+const initialState: Measures = {
   fullLength: '',
   centerFront: '',
   frontShoulderSlope: '',
@@ -17,22 +33,27 @@ const initialState = {
   sideLength: '',
 };
 
-const BodiceMeasurementInputs: React.FC = () => {
-  const [measures, setMeasures] = React.useState(initialState);
+type BodiceMeasurementInputsProps = {
+  setMeasures: (measures: Measures) => void;
+};
+
+const BodiceMeasurementInputs: React.FC<BodiceMeasurementInputsProps> = ({
+  setMeasures,
+}) => {
+  const [inputs, setInputs] = React.useState(initialState);
 
   useEffect(() => {
     // TODO: on mount choose from base measurements to populate inputs
-  });
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setMeasures((prev) => ({ ...prev, [name]: value }));
+    setInputs((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: pass measurements up to be used in drafter
-    console.log([measures]);
+    setMeasures(inputs);
   };
 
   return (
@@ -45,7 +66,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="fullLength"
             placeholder="Full Length"
-            value={measures.fullLength}
+            value={inputs.fullLength}
             onChange={handleChange}
             min="1"
           />
@@ -58,7 +79,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="centerFront"
             placeholder="Center Front"
-            value={measures.centerFront}
+            value={inputs.centerFront}
             onChange={handleChange}
             min="1"
           />
@@ -71,7 +92,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="frontShoulderSlope"
             placeholder="Shoulder Slope"
-            value={measures.frontShoulderSlope}
+            value={inputs.frontShoulderSlope}
             onChange={handleChange}
             min="1"
           />
@@ -84,7 +105,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="strap"
             placeholder="Strap"
-            value={measures.strap}
+            value={inputs.strap}
             onChange={handleChange}
             min="1"
           />
@@ -97,7 +118,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="frontAcrossShoulder"
             placeholder="Across Shoulder"
-            value={measures.frontAcrossShoulder}
+            value={inputs.frontAcrossShoulder}
             onChange={handleChange}
             min="1"
           />
@@ -110,7 +131,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="acrossChest"
             placeholder="Across Chest"
-            value={measures.acrossChest}
+            value={inputs.acrossChest}
             onChange={handleChange}
             min="1"
           />
@@ -123,7 +144,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="bustDepth"
             placeholder="Bust Depth"
-            value={measures.bustDepth}
+            value={inputs.bustDepth}
             onChange={handleChange}
             min="1"
           />
@@ -136,7 +157,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="shoulderLength"
             placeholder="Shoulder Length"
-            value={measures.shoulderLength}
+            value={inputs.shoulderLength}
             onChange={handleChange}
             min="1"
           />
@@ -149,7 +170,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="bustArc"
             placeholder="Bust Arc"
-            value={measures.bustArc}
+            value={inputs.bustArc}
             onChange={handleChange}
             min="1"
           />
@@ -162,7 +183,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="bustSpan"
             placeholder="Bust Span"
-            value={measures.bustSpan}
+            value={inputs.bustSpan}
             onChange={handleChange}
             min="1"
           />
@@ -175,7 +196,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="waistArc"
             placeholder="Waist Arc"
-            value={measures.waistArc}
+            value={inputs.waistArc}
             onChange={handleChange}
             min="1"
           />
@@ -188,7 +209,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="dartPlacement"
             placeholder="Dart Placement"
-            value={measures.dartPlacement}
+            value={inputs.dartPlacement}
             onChange={handleChange}
             min="1"
           />
@@ -201,7 +222,7 @@ const BodiceMeasurementInputs: React.FC = () => {
             step="0.01"
             name="sideLength"
             placeholder="Side Length"
-            value={measures.sideLength}
+            value={inputs.sideLength}
             onChange={handleChange}
             min="1"
           />
