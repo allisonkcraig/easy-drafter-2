@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from 'react';
 
-type CanvasDrafterProps = {
-  measurements?: {
-    bust: number;
-    waist: number;
-  };
+export type Measures = {
+  fullLength?: number;
+  centerFront?: number;
+  frontShoulderSlope?: number;
+  strap?: number;
+  frontAcrossShoulder?: number;
+  acrossChest?: number;
+  bustDepth?: number;
+  shoulderLength?: number;
+  bustArc?: number;
+  bustSpan?: number;
+  waistArc?: number;
+  dartPlacement?: number;
+  sideLength?: number;
 };
 
-const CanvasDrafter: React.FC<CanvasDrafterProps> = ({
-  measurements = { bust: 0, waist: 0 },
-}) => {
-  //   function determineInitialValues() {}
+type BodiceDrafterProps = {
+  measures: Measures;
+};
 
+const BodiceDrafter: React.FC<BodiceDrafterProps> = ({ measures }) => {
+  console.log('measures in CanvasDrafter:', measures);
   function drawDraft() {
     const canvas = document.querySelector(
       '.TopBlockStep2-canvas'
@@ -42,7 +52,7 @@ const CanvasDrafter: React.FC<CanvasDrafterProps> = ({
 
   useEffect(() => {
     drawDraft();
-  }, [measurements]);
+  }, [measures]);
 
   return (
     <div>
@@ -55,4 +65,4 @@ const CanvasDrafter: React.FC<CanvasDrafterProps> = ({
   );
 };
 
-export default CanvasDrafter;
+export default BodiceDrafter;

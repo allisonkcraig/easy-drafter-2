@@ -5,19 +5,19 @@ import BodiceDrafter from './BodiceDrafter';
 import BodiceMeasurementInputs from './BodiceMeasurementInputs';
 
 const initialState = {
-  fullLength: '',
-  centerFront: '',
-  frontShoulderSlope: '',
-  strap: '',
-  frontAcrossShoulder: '',
-  acrossChest: '',
-  bustDepth: '',
-  shoulderLength: '',
-  bustArc: '',
-  bustSpan: '',
-  waistArc: '',
-  dartPlacement: '',
-  sideLength: '',
+  fullLength: 0,
+  centerFront: 0,
+  frontShoulderSlope: 0,
+  strap: 0,
+  frontAcrossShoulder: 0,
+  acrossChest: 0,
+  bustDepth: 0,
+  shoulderLength: 0,
+  bustArc: 0,
+  bustSpan: 0,
+  waistArc: 0,
+  dartPlacement: 0,
+  sideLength: 0,
 };
 
 const TopBlockStep2: React.FC = () => {
@@ -37,7 +37,7 @@ const TopBlockStep2: React.FC = () => {
         <strong>Waist:</strong> {waist || 'N/A'}
       </div>
       <div className="TopBlockStep2-container">
-        <BodiceDrafter />
+        <BodiceDrafter measures={measures} />
         <BodiceMeasurementInputs setMeasures={setMeasures} />
       </div>
     </div>
