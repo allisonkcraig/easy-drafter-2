@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
 type CanvasDrafterProps = {
-  measurements?: {
+  measures?: {
     bust: number;
     waist: number;
   };
 };
 
 const CanvasDrafter: React.FC<CanvasDrafterProps> = ({
-  measurements = { bust: 0, waist: 0 },
+  measures = { bust: 0, waist: 0 },
 }) => {
   //   function determineInitialValues() {}
-
+  console.log('measures in CanvasDrafter:', measures);
   function drawDraft() {
     const canvas = document.querySelector(
       '.TopBlockStep2-canvas'
@@ -42,7 +42,7 @@ const CanvasDrafter: React.FC<CanvasDrafterProps> = ({
 
   useEffect(() => {
     drawDraft();
-  }, [measurements]);
+  }, [measures]);
 
   return (
     <div>

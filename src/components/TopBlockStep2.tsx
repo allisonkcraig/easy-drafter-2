@@ -37,7 +37,7 @@ const TopBlockStep2: React.FC = () => {
         <strong>Waist:</strong> {waist || 'N/A'}
       </div>
       <div className="TopBlockStep2-container">
-        <BodiceDrafter />
+        <BodiceDrafter measures={measures} />
         <BodiceMeasurementInputs setMeasures={setMeasures} />
       </div>
     </div>
